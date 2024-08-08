@@ -1,4 +1,4 @@
 package com.ureca.urecaWare.domain.member.dto;
 
-public class GroupDto {
+public class OrganizationDto {
 }
