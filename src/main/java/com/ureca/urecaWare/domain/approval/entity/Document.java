@@ -9,7 +9,8 @@ import java.time.LocalDateTime;
 @Getter
 public class Document {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "doc_no")
     private Long doc_No;
 
@@ -25,7 +26,7 @@ public class Document {
     @Column(name = "doc_update")
     private LocalDateTime doc_update;
 
-    @OneToMany
-    @JoinColumn(name = "member_no")
-    private Long member_no;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "approval_no")
+    private Approval approval;
 }

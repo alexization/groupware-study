@@ -20,11 +20,4 @@ public class Organization {
     @Column(name = "org_name")
     private String org_name;
 
-    @Column(name = "parent_no")
-    private Long parent_no;
-
-    @OneToMany(mappedBy = "organization")
-    @Column(name = "members")
-    private List<Member> members = new ArrayList<>();
-
 }

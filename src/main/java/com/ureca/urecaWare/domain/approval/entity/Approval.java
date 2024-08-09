@@ -13,13 +13,10 @@ public class Approval {
     @Column(name = "doc_no")
     private Long doc_no;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status")
-    private String status;
+    private Status status;
 
     @Column(name = "approval_date")
     private LocalDateTime approval_date;
-
-    @OneToMany
-    @JoinColumn(name = "member_no")
-    private Long member_no;
 }
