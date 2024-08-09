@@ -9,9 +9,10 @@ import java.time.LocalDateTime;
 @Getter
 public class Document {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "doc_no")
-    private Long doc_No;
+    private Long doc_no;
 
     @Column(name = "doc_title")
     private String doc_Title;
@@ -24,8 +25,4 @@ public class Document {
 
     @Column(name = "doc_update")
     private LocalDateTime doc_update;
-
-    @OneToMany
-    @JoinColumn(name = "member_no")
-    private Long member_no;
 }

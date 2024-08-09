@@ -9,17 +9,18 @@ import java.time.LocalDateTime;
 @Getter
 public class Approval {
 
-    @Id @GeneratedValue
-    @Column(name = "doc_no")
-    private Long doc_no;
+    @Id
+    private Long apploval_no;
 
+    @MapsId(value = "apploval_no")
+    @OneToOne(targetEntity = Document.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "doc_no")
+    private Document document;
+
+    @Enumerated(EnumType.STRING)
     @Column(name = "status")
-    private String status;
+    private Status status;
 
     @Column(name = "approval_date")
     private LocalDateTime approval_date;
-
-    @OneToMany
-    @JoinColumn(name = "member_no")
-    private Long member_no;
 }

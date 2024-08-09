@@ -20,8 +20,4 @@ public class Position {
 
     @Column(name = "admin")
     private boolean admin;
-
-    @OneToMany(mappedBy = "position")
-    @Column(name = "members")
-    private List<Member> members = new ArrayList<>();
 }

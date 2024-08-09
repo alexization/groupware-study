@@ -20,11 +20,10 @@ public class Organization {
     @Column(name = "org_name")
     private String org_name;
 
-    @Column(name = "parent_no")
-    private Long parent_no;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "parent_org_no")
+    private Organization parent;
 
-    @OneToMany(mappedBy = "organization")
-    @Column(name = "members")
-    private List<Member> members = new ArrayList<>();
-
+    @OneToMany(mappedBy = "parent")
+    private List<Organization> children = new ArrayList<>();
 }
