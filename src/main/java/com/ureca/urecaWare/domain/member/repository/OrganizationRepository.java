@@ -1,4 +1,4 @@
 package com.ureca.urecaWare.domain.member.repository;
 
-public class GroupRespository {
+public class OrganizationRepository {
 }

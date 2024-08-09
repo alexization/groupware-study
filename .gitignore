@@ -37,4 +37,4 @@ out/
 .vscode/
 
 ##의존성 관련파일
-!**/src/main/resources/application.properties
+application.yml
