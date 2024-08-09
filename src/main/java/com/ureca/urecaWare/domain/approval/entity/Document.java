@@ -12,7 +12,7 @@ public class Document {
     @Id
     @GeneratedValue
     @Column(name = "doc_no")
-    private Long doc_No;
+    private Long doc_no;
 
     @Column(name = "doc_title")
     private String doc_Title;
@@ -25,8 +25,4 @@ public class Document {
 
     @Column(name = "doc_update")
     private LocalDateTime doc_update;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "approval_no")
-    private Approval approval;
 }

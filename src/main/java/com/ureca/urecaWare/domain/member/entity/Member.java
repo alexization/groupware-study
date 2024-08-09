@@ -20,6 +20,12 @@ public class Member {
     @Column(name = "member_name")
     private String member_name;
 
+    @Column(name = "member_id")
+    private String member_id;
+
+    @Column(name = "member_pw")
+    private String member_pw;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "position_no")
     private Position position;
@@ -27,10 +33,6 @@ public class Member {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "org_no")
     private Organization organization;
-
-    @OneToMany
-    @JoinColumn(name = "approval_no")
-    private List<Approval> approvals = new ArrayList<>();
 
     @OneToMany
     @JoinColumn(name = "doc_no")

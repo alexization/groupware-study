@@ -9,9 +9,13 @@ import java.time.LocalDateTime;
 @Getter
 public class Approval {
 
-    @Id @GeneratedValue
-    @Column(name = "doc_no")
-    private Long doc_no;
+    @Id
+    private Long apploval_no;
+
+    @MapsId(value = "apploval_no")
+    @OneToOne(targetEntity = Document.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "doc_no")
+    private Document document;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
