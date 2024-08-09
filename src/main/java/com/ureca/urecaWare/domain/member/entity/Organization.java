@@ -20,4 +20,10 @@ public class Organization {
     @Column(name = "org_name")
     private String org_name;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "parent_org_no")
+    private Organization parent;
+
+    @OneToMany(mappedBy = "parent")
+    private List<Organization> children = new ArrayList<>();
 }
