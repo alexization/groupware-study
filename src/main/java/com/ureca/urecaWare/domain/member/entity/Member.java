@@ -15,24 +15,24 @@ public class Member {
     @Id
     @GeneratedValue
     @Column(name = "member_no")
-    private Long member_no;
+    private Long memberNo;
 
     @Column(name = "member_name")
-    private String member_name;
+    private String memberName;
 
     @Column(name = "member_id")
-    private String member_id;
+    private String memberId;
 
     @Column(name = "member_pw")
-    private String member_pw;
+    private String memberPw;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "position_no")
-    private Position position;
+    private Position positionNo;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "org_no")
-    private Organization organization;
+    private Organization orgNo;
 
     @OneToMany
     @JoinColumn(name = "doc_no")

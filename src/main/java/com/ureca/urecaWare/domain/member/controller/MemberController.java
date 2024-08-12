@@ -24,7 +24,7 @@ public class MemberController {
     public ResponseEntity<String> login(@RequestBody LoginRequestDto loginRequest) {
         try {
             Member member = loginService.login(loginRequest.getMemberId());
-            return ResponseEntity.ok("Login successful. Welcome, " + member.getMember_name() + "!");
+            return ResponseEntity.ok("Login successful. Welcome, " + member.getMemberName() + "!");
         } catch (NoSuchElementException e) {
             return ResponseEntity.status(404).body("Member not found");
         } catch (IllegalArgumentException e) {

@@ -17,7 +17,7 @@ public class LoginService {
     public Member login(String memberId) {
 //        return memberRepository.findById(memberId)
 //                .orElseThrow(() -> new NoSuchElementException("Member not found"));
-        Optional<Member> member = memberRepository.findById(memberId);
+        Optional<Member> member = memberRepository.findByMemberId(memberId);
         if(member.isPresent()) {
             return  member.get();
         }
